@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画效果</title>
+    <style>
+        #box{
+            width:100px;
+            height:100px;
+            background:#f00;
+        }
+    </style>
+</head>
+<body>
+    <button class="show" >显示</button>
+    <button class="hide">隐藏</button>
+    <button class="toggle">切换</button>
+    <button class="up">上</button>
+    <button class="down">下</button>
+    <button class="slidetoggle">切换到卷动</button>
+    <button class="fadeIn" >淡入</button>
+    <button class="fadeOut" >淡出</button>
+    <button class="fadeToggle">淡入/淡出</button>
+    <button class="fadeTo" >透明度到多少</button>
+    <div id="box" >box</div>
+    <script src="jquery.js" ></script>
+    <script>
+        $('.show').click(function(){
+            $('#box').show(1000);
+        })
+        $('.hide').click(function () {
+            $('#box').hide(1000);
+        })
+        $('.toggle').click(function(){
+            $('#box').toggle(1000);
+        })
+        $('.up').click(function(){
+            $('#box').slideUp(1000);
+        })
+        $('.down').click(function(){
+            $('#box').slideDown(1000);
+        })
+        $('.slidetoggle').click(function () {
+            $('#box').slideToggle(1000);
+        })
+        $('.fadeOut').click(function(){
+            $('#box').fadeOut(1000);
+        })
+        $('.fadeIn').click(function () {
+            $('#box').fadeIn(1000);
+        })
+        $('.fadeToggle').click(function () {
+            $('#box').fadeToggle(1000);
+        })
+        $('.fadeTo').click(function(){
+            $('#box').fadeTo(1000,0.3)
+        })
+    </script>
+</body>
+</html>

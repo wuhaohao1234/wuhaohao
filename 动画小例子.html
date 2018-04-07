@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画小例子</title>
+    <style>
+        .test {
+            padding: 5px;
+            margin-right: 5px;
+            background: #ff0;
+            float: left;
+            display: none;
+        }
+        div{
+            width:100px;
+            height:100px;
+            background:#f00;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="test">你</div>
+    <div class="test">好</div>
+    <div class="test">吗</div>
+    <div class="test">？</div> -->
+    <button class="show">显示</button>
+    <button class="hide">隐藏</button>
+    <button class="toggle" >切换</button>
+    <div></div>
+    <script src="jquery.js"></script>
+    <script>
+        //同步动画
+        // $('.show').click(function(){
+        //     $('.test').show(1000);
+        // })
+        //列队动画
+        // $('.show').click(function () {
+        //     $('.test').eq(0).show(1000,function(){
+        //        $('.test').eq(1).show(1000, function () {
+        //             $('.test').eq(2).show(1000, function () {
+        //                 $('.test').eq(3).show(1000);
+        //            });
+        //         }); 
+        //     });
+        // })
+        //列队动画，里面用到一个递归
+        // $('.show').click(function(){
+        //     $('.test').first().show(1000,function testShow(){
+        //         $(this).next().show(1000,testShow);
+        //     })
+        // })
+        // $('.show').click(function () {
+        //     $('.test').first().show(1000, function testShow() {
+        //         $(this).next().show(1000, testShow);
+        //     })
+        // })
+        // $('.hide').click(function () {
+        //     $('.test').last().hide(1000, function testhide() {
+        //         $(this).prev().hide(1000, testhide);
+        //     })
+        // })
+        // toggle切换
+        $('.toggle').click(function(){
+            $('div').toggle(1000);
+        })
+    </script>
+</body>
+
+</html>

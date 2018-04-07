@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量的结构赋值：数组
+        var a = 1,b = 2,c = 3;
+        var [a,b,c] = [1,2,3];
+        if(a + b > 2){
+            console.log(a);
+        }
+        var [a,,c] = [1,2,3];
+        var [a,...c] = [1,2,3];
+        let [a,b,c] = [1,2];//c为undefined
+    </script>
+</body>
+</html>

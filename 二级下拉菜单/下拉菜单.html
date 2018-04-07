@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二级下拉菜单</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style-type: none;
+            width:100px;
+            height:auto;
+            background:#ccc;
+            text-align:center;
+        }
+        .hide{
+            position:absolute;
+            top:50px;
+            display:none;
+        }
+        .box{
+            float:left;
+            height:50px;
+            line-height:50px;
+            cursor:pointer;
+            position:relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li class="box" >菜单1
+                <div class="hide" >
+                    <ul>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="box" >菜单2
+                <div class="hide" >
+                    <ul>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="box" >菜单3
+                <div class="hide" >
+                    <ul>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="box" >菜单4
+                <div class="hide" >
+                    <ul>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="box" >菜单5
+                <div class="hide" >
+                    <ul>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                        <li>下拉菜单</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="jquery.js" ></script>
+    <script>
+        for(var i = 0;i < $('.box').length;i ++){
+            $('.box').eq(i).mouseenter(function(){
+                // console.log($(this).index()); //点击后返回的是node，不是jquery里面的jquery对象\
+                var index = $(this).index();
+                $('.hide').eq(index).slideDown();
+            })
+        }
+        for (var i = 0; i < $('.box').length; i++) {
+            $('.box').eq(i).mouseleave(function () {
+                // console.log($(this).index()); //点击后返回的是node，不是jquery里面的jquery对象\
+                var index = $(this).index();
+                $('.hide').eq(index).slideUp();
+            })
+        }
+    </script>
+</body>
+</html>

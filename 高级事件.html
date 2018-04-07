@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高级事件</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <!-- 将普通事件绑定和事件委托的绑定进行整合 -->
+    <!-- 利用on()和off() -->
+    <div id="box">
+        <button class="btn">按钮</button>
+    </div>
+    <script src="jquery.js"></script>
+    <script>
+        // 普通绑定：bind
+        // 解除绑定: ubbind
+        // 事件委托 ：live(废弃) delegate('子元素','事件'，'执行函数')
+        // 解除委托 ： die(废弃) undelegate
+        // 新方法 ： on
+        // 解除        off 
+        // $('.btn').on('click', function(){
+        //     console.log('替代bind');
+        // })
+        //加上额外的数据
+        // $('.btn').on('click',{user : 'lee'}, function (e) {
+        //     console.log('替代bind' + e.data.user);
+        // })
+        // 多个事件
+        $('.btn').on({
+            mousedown : function() {
+                console.log('按下');
+            },
+            mouseup : function() {
+                console.log('抬起');
+            }
+        })
+        // 阻止冒泡
+        // $('#box').on('.btn',function(){
+        //     return false;
+        // })
+        // // 简写
+        // $('#box').on('.btn',false);
+        // 事件委托
+        // $('#box').on('click','.btn',function(){
+        //     $(this).clone().appendTo('#box');
+        // })
+        // 父元素.on('事件','元素','函数'),实现事件委托，委托到父元素
+        // 仅一次事件触发
+        $('.btn').one('click',function(){
+            console.log('只是处罚了一次事件');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淡入淡出</title>
+    <style>
+        #box{
+            width:100px;
+            height:100px;
+            background:#f00;
+        }
+    </style>
+</head>
+<body>
+    <button class="up" >上</button>
+    <button class="down" >下</button>
+    <button class="toggle" >切换</button>
+    <div id="box" ></div>
+    <script src="jquery.js" ></script>
+    <script>
+        $('.up').click(function(){
+            $('#box').slideUp(1000);
+        })
+        $('.down').click(function () {
+            $('#box').slideDown(1000);
+        })
+        $('.toggle').click(function () {
+            $('#box').slideToggle(1000);
+        })
+    </script>
+</body>
+</html>

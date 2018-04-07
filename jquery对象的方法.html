@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            background:#f00;
+        }
+    </style>
+</head>
+<body>
+    <div>1321321</div>
+    <div class="box"></div>
+    <p>1</p>
+    <p>2</p>
+    
+    <p>3</p>
+    <input type="button" value="点击">
+    <script src="jquery.js" ></script>
+    <script>
+        $('div').addClass('box');
+        $('div').removeClass('box');
+        $('p').eq(0).addClass('box');
+        $('p').eq(1).html('<div>1321</div>');
+        $('input').mousedown(function(){
+            console.log(this);
+        })
+        console.log($(document).width());
+    </script>
+</body>
+</html>

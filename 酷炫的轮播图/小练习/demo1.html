@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            position:absolute;
+        }
+        .box1{
+            background:#f00;
+            top:100px;
+            left:0;
+        }
+        .box2{
+            background:#0f0;
+            top:100px;
+            left:100px;
+        }
+        .box3{
+            background:#00f;
+            top:100px;
+            left:200px;
+        }
+        button{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" ></div>
+    <div class="box2" ></div>
+    <div class="box3" ></div>
+    <button>向左</button>
+    <button>向右</button>
+    <script src="jquery.js" ></script>
+    <script>
+        var arr = [];
+        for(var i = 0;i < $('div').length;i++){
+            arr.push([$('div')[i].offsetLeft , $('div')[i].offsetTop])
+        }
+        $('button').eq(1).click(function(){
+            arr.push(arr[0]);
+            arr.shift(arr[0]);
+            for(var i = 0;i < $('div').length; i++){
+                $('div').eq(i).css({
+                    left : arr[i][1],
+                    top : arr[i][0]
+                })
+            }
+            console.log(arr);
+        })
+        $('button').eq(0).click(function () {
+            arr.pop(arr[0]);
+            arr.unshift(arr[0]);
+            for (var i = 0; i < $('div').length; i++) {
+                $('div').eq(i).css({
+                    left: arr[i][1],
+                    top: arr[i][0]
+                })
+            }
+        })
+        
+    </script>
+</body>
+</html>

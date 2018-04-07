@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //变量的结构赋值:原理：数组和对象的每一项是赋值到对应名字相同的每一项
+        var obj = {
+            a : 1,
+            b : 2
+        }
+        let {a,b} = obj;
+        let {a:A,b} = obj;//A为1，a为undefined
+        console.log(b);
+        console.log(a);
+    </script>
+</body>
+</html>

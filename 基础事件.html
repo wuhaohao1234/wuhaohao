@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+</head>
+<body>
+    <input type="button" value="点击" >
+    <input type="button" value="点击2" >
+    <div></div>
+    <script src="jquery.js" ></script>
+    <script>
+        // $('input').click(function() {
+        //     alert(1);
+        // });
+        // //通过bind封装
+        // $('input').eq(0).bind('click',function(){
+        //     alert(2);
+        // });
+        function fn() {
+            alert(1);
+        }
+        // $('input').eq(0).bind('mouseout mousemove' , fn);
+        // $('input').eq(0).bind('click mouseover',function(){
+        //     $('div').html(function(index,value){
+        //         return value + 1;
+        //     });
+        // });
+        $('input').bind({
+            mousedown : function() {
+                console.log('a');
+            },
+            mouseover : function() {
+                console.log('b');
+            }
+        })
+        // bind :添加事件
+        //unbind : 删除事件
+        $('input').unbind('mousedown');
+    </script>
+</body>
+</html>

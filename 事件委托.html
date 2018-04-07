@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件委托</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" >
+        <button class="btn" >按钮</button>
+    </div>
+    <!-- 事件委托就是将子元素的事件交给父元素去完成 -->
+    <script src="jquery.js" ></script>
+    <script>
+        //重点bind    delegate
+
+        // bind 绑定了三个事件
+        // $('.btn').bind('click',function() {
+        //     console.log('事件不委托');
+        // });
+        //需要一个插件,绑定的不是btn,而是document。
+
+        /*这里注意一点是事件冒泡到document.   当点击document时候，需要验证event.type属性和event.target
+        
+        */
+
+
+        //live不支持连缀所以被废弃
+        // 可以动态绑定事件，但是已经废弃
+        // $('.btn').live('click',function() {
+        //     console.log('事件委托');
+        // });
+        //bind无法动态绑定事件
+        $('.btn').bind('click',function(){
+            $(this).clone(true).appendTo('#box');
+            // 加上true是连事件行为一块复制
+        })
+        //有一种方法可以解决事件委托
+        $('#box').delegate('.btn','click',function(){
+            console.log('1');
+        })
+    </script>
+
+</body>
+</html>

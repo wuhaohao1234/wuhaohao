@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>闭包</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script>
+        // 凡是将内部函数返回出去，内部函数可以访问外部函数的变量
+        function a() {
+            function b() {
+                var bbb = 2344;
+                document.write(aaa);
+            }
+            var aaa = 123;
+            return b;
+        }
+        var golb = 100;
+        var demo = a();
+        demo();
+    </script>
+</body>
+</html>

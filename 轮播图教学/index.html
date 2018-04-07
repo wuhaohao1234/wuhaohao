@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+            float:left;
+        }
+        #box{
+            position:relative;
+            width:1380px;
+            height:354px;
+            overflow:hidden;
+        }
+        ul{
+            position:absolute;
+        }
+        .left,.right{
+            position:absolute;
+            top:50%;
+            cursor:pointer;
+            margin-top:-22px;
+            opacity:0.5;
+        }
+        .left:hover,.right:hover{
+            opacity:1;
+            width:50px;
+            height:50px;
+        }
+        .left{
+            left:20px;
+        }
+        .right{
+            right:20px;
+        }
+        .dian{
+            width:280px;
+            height:40px;
+            position:absolute;
+            bottom:0;
+            left:50%;
+            margin-left:-140px;
+            z-index:99;
+        }
+        .dian span{
+            width:20px;
+            display:inline-block;
+            height:20px;
+            background:#fff;
+            font-size:0;
+            border-radius:50%;
+            border:2px solid #ff0;
+            float:left;
+            margin-right:20px;
+            cursor:pointer;
+        }
+        #box .dian .box{
+            background:#ff0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" >
+        <ul style="left : -1380px" >
+            <li><img src="images/6.jpg" alt=""></li>
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+            <li><img src="images/6.jpg" alt=""></li>
+            <li><img src="images/1.jpg" alt=""></li>
+        </ul>
+        <img class="left" src="images/l.png" alt="">
+        <img class="right" src="images/r.png" alt="">
+        <div  class="dian" >
+            <span class="box" >1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+        </div>
+    </div>
+    <script src="jquery.js" ></script>
+    <script>
+        var length = parseInt($('li').eq(0).css('width'));
+        var x = 0;//记录点击次数
+        $('ul').css({
+            width : length * $('li').length + 'px' 
+        })
+        $('.left').click(function(){
+            x += 1;
+            bianse();
+            if(x == 6){
+                x = 0;
+            }
+            $('span')[x].className = 'box';
+            var oLeft = $('ul')[0].offsetLeft;
+            if (oLeft < - length * 6) {
+                $('ul').css({
+                    left: - length
+                })
+                oLeft = $('ul')[0].offsetLeft;
+            }
+            animates(oLeft-length)
+        })
+        $('.right').click(function () {
+            x -= 1;
+            bianse()
+            if (x == -1) {
+                x = 5;
+            }
+            $('span')[x].className = 'box';
+            var oLeft = $('ul')[0].offsetLeft;
+            if(oLeft > - length){
+                $('ul').css({
+                    left : - length * 6 + 'px'
+                })
+                oLeft = $('ul')[0].offsetLeft;
+            }
+            animates(oLeft + length)
+        })
+        function animates(bianliang){
+            $('ul').animate({
+                left : bianliang 
+            })
+        }
+        for(var i = 0;i < $('span').length;i ++){
+            $('span').eq(i).click(function(){
+                for (var j = 0; j < $('span').length; j++) {
+                    $('span')[j].className = '';
+                }
+                this.className = 'box';
+                var obj = this.innerHTML;
+                animates(-(obj)*length);                
+            })
+        }
+        function bianse(){
+            for (var j = 0; j < $('span').length; j++) {
+                $('span')[j].className = '';
+            }
+        }
+    </script>
+</body>
+</html>

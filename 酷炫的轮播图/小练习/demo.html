@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小练习</title>
+</head>
+<body>
+    <div>1,2,3,4,5</div>
+    <button>切换</button>
+    <script src="jquery.js" ></script>
+    <script>
+        var arr = $('div').html().split(',');
+        console.log(arr);
+        $('button').click(function(){
+            arr.push(arr[0]);
+            arr.shift(arr[0]);
+            $('div').html(arr);
+        })
+    </script>
+</body>
+</html>

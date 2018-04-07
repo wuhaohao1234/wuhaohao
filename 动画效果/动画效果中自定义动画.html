@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义动画</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background:#f00;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" >按钮</button>
+    <div id="box">
+        box
+    </div>
+    <script src="jquery.js" ></script>
+    <script>
+        // $('.btn').click(function(){
+        //     $('#box').animate({
+        //         width : '200px',
+        //         height : '200px',
+        //         background : '#ff0',
+        //         opacity : '0.5',
+        //         fontSize : '40px',
+        //         top : '90px',
+        //         left : '90px'
+        //     },2000,function(){
+        //         console.log('执行完毕');
+        //     })
+        // })
+        // $('.btn').click(function(){
+        //     $('#box').animate({width : '200px'}).animate({height : '200px'}).animate({opacity : '0.5'})
+        // })
+        // $('.btn').click(function(){
+        //     $('#box').slideUp(1000).slideDown(1000).css({
+        //         width : '200px',
+        //         height : '200px',
+        //         background : '#ff0'
+        //     })
+        //     // css不是默认动画，会排列到动画前面
+        // })     
+        //jquery提供了个方法 ： queue,里面可以传入一个参数next
+        $('.btn').click(function(){
+            $('#box').slideUp(1000).slideDown(1000).queue(function(next){
+                $(this).css({
+                    width : '200px',
+                    height : '200px',
+                    background : '#ff0'
+                })//可以传入一个next参数执行下一个动画
+                next()
+            }).hide('1000');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画效果</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="show">显示</button>
+    <button class="hide">隐藏</button>
+    <div id="box"></div>
+    <script src="jquery.js"></script>
+    <script>
+        // show方法（显示）hide方法（隐藏）
+
+
+        // toggle(切换)
+        // $('.show').click(function () {
+        //     $('#box').show();//显示
+        // })
+        // $('.hide').click(function () {
+        //     $('#box').hide();//隐藏
+        // })
+        //可以传递两个参数，第一个速度，第二个回调函数
+        // $('.show').click(function () {
+        //     $('#box').show(1000);//显示
+        // })//根据原来元素是否是块级元素还是行内元素
+        // $('.hide').click(function () {
+        //     $('#box').hide(1000);//隐藏
+        // })//display:none
+        // 加入回调函数
+        $('.show').click(function () {
+            $('#box').show(1000,function(){
+                alert('完成');
+            });//显示
+        })//根据原来元素是否是块级元素还是行内元素
+        $('.hide').click(function () {
+            $('#box').hide(1000,function(){
+                alert('完成');
+            });//隐藏
+        })//display:none
+    </script>
+</body>
+
+</html>

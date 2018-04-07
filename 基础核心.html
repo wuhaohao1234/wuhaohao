@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基础核心</title>
+</head>
+<body>
+    <!-- 代码风格:
+        $(function{
+            执行一个匿名函数
+        })
+    -->
+    <div id="box" >fjslakdfj</div>
+    <script src="jquery.js" ></script>
+    <script>
+        // $是jquery对象
+        // $(function(){
+        //     $('#box').css('color','red');
+        // });
+        // alert($);//返回的是jquery对象的内容
+        // alert($());//返回的是jquery对象
+        // alert($('#box').css('color','red'));//返回的还是jquery对象
+        $('#box').css('color','#f00').css('background','#000');//具有连缀的功能
+        /*上面的是连缀功能*/
+        $(document).ready(function(){
+            console.log(1);//等到所有的解析完成后加载
+        })
+        // 简写
+        $(function(){
+            console.log(2);//这个是简写
+        })
+        // 对象互换变成dom对象,用原生的写或者用方法
+        $(function(){
+            console.log($('#box').get(0));//得到的是dom对象
+        })
+    </script>
+</body>
+</html>

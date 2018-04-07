@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义动画</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position:absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div id="box">box</div>
+    <script src="jquery.js"></script>
+    <script>
+        // $('button').click(function(){
+        //     $('#box').animate({
+        //         width : '200px',
+        //         height : '200px',
+        //         opacity : '.5',
+        //         fontSize : '50px'
+        //     })//多重同步动画
+        // })
+        // $('button').click(function () {
+        //     $('#box').animate({
+        //         width : '200px',
+        //         height : '200px',
+        //         opacity : '.5',
+        //         fontSize : '50px',
+        //         top : '+=20px',
+        //         left : '+=20px'
+        //     },2000,function(){
+        //         console.log('动画完毕');
+        //     })//多重同步动画
+        // })
+        //列队动画采用嵌套方式回调函数
+        //在同一个元素基础上采用连缀和顺序调用
+        $('button').click(function (){
+            $('#box').animate({width : '200px'}).animate({height: '200px'}).animate({opaity: '.5'});
+        })
+    </script>
+</body>
+
+</html>

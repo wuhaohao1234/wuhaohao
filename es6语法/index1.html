@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一个let : 与var 类似，但是在代码块里面
+        let a = 5;
+        var b = 3;
+        if(true){
+            let c = 6;//代码块里面就算一个域
+        }
+        console.log(a);
+        // console.log(c);//报错
+        // for(var i = 0;i < 5;i ++){
+        //     console.log(i);
+        // }
+        // console.log(i);
+        for(let i = 0;i < 5;i ++){
+            console.log(i);
+        }
+        // console.log(i);//报错
+    </script>
+</body>
+</html>

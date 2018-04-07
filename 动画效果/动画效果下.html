@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画效果</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background:#f00;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">点击</button>
+    <button class="stop">停止</button>
+    <div id="box">box</div>
+    <script src="jquery.js" ></script>
+    <script>
+        $('.btn').click(function(){
+            $('#box').animate({
+                left : '300px'
+            },1000).delay(2000).animate({
+                top : '300px'
+            },1000)
+        })
+        $('.stop').click(function(){
+            $('#box').stop(true,true);
+        })
+        // jquery的全局属性：
+        /*
+            $.fx.off = true //关闭动画
+            $.fx.interval = 200 //帧数
+        */
+        //stop有一个参数是布尔值，为true是是停止列队后面的动画.第二个参数可以停止后跳转到最终位置
+        //delay加入时间延迟
+    </script>
+</body>
+</html>
