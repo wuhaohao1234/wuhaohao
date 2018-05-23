@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.big{
+			width:500px;
+			height:500px;
+			background: #f00;
+		}
+		.small{
+			width:100px;
+			height:100px;
+			background:#ff0;
+		}
+	</style>
+</head>
+<body>
+	<div class="big" >
+		<div class="small">
+			
+		</div>
+	</div>
+	<script>
+		var big = document.getElementsByClassName('big')[0]
+		var small = document.getElementsByClassName('small')[0]
+		big.onmouseenter = function() {
+			console.log(1)
+		}
+		small.onmouseenter = function() {
+			console.log(2)
+		}
+	</script>
+</body>
+</html>
