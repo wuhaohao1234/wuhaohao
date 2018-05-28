@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:'宋体';
+}
+.login {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+canvas{
+    display:block;
+}
+.login canvas:nth-of-type(1){
+    z-index:2;
+}
+.login canvas:nth-of-type(2){
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    opacity:0.2;
+}
+.login img:nth-of-type(1){
+    display:none
+}
+.login img:nth-of-type(2){
+    display:block;
+    position:absolute;
+    bottom:0;
+    left:20%;
+    opacity: 0.8;
+}
+.login img:nth-of-type(3){
+    display:block;
+    position:absolute;
+    top:30px;
+    right:100px;
+    width:100px;
+    height:100px;
+    opacity: 0.8;
+    animation: myMoon 3s infinite;
+}
+@keyframes myMoon{
+    0%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* 个人介绍 */
+.summary{
+    position: absolute;
+    top:200px;
+    left:50%;
+    opacity: 0.5;
+    margin-left:-280px;
+    left:50%;
+    width:560px;
+    text-align:center;
+    height:320px;
+    color:rgb(76, 12, 124)
+}
+.summary h2{
+    font-size:57px;
+}
+.summary p{
+    font-size:59px;
+    margin-top:15px;
+}
+.summary_login{
+    margin-top:40px;
+}
+.summary .summary_login button{
+    width:140px;
+    margin-right: 5px;
+    opacity: 0.4;
+    cursor: pointer;
+    display:inline-block;
+    border-radius: 5px;
+    height:30px;
+}
+.summary .summary_login button:hover{
+    opacity: 0.8;
+    width:142px;
+    height:32px;
+}
+/* 注册登录页面 */
+
+.login_zc{
+    width:560px;
+    top:-400px;
+    height:320px;
+    position: absolute;
+    left:50%;
+    border-radius: 20px;
+    margin-left:-280px;
+    z-index: 7;
+    overflow:hidden;
+    font-size:32px;
+}
+.hiden{
+    display: none;
+}
+.login_zc h2{
+    text-align:center;
+    height:66px;
+    line-height:66px;
+    color:#f00078;
+    opacity: 0.8;
+}
+.login_input{
+    text-shadow:1px 1px #ccc;
+    padding:15px 0px 14px 40px;
+    border-bottom:1px dashed #fff;
+}
+.login_input input{
+    display:block;
+    margin-right: 100px;
+    width:240px;
+    height:50px;
+    background:rgba(0,0,0,0);
+    border:0;
+    color:#fff;
+    outline:none;
+    font-size:24px;
+    float: right;
+}
+
+.lg{
+    position: relative;
+    text-align: center;
+}
+.lg button{
+    opacity: 0.5;
+    width: 142px;
+    height: 32px;
+
+    margin-top:10px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 5px;
+}
+.lg button:hover{
+    opacity: 0.8;
+}
+.button{
+    position: absolute;
+    width:200px;
+    height:40px;
+    margin-top:5px;
+    display: block;
+    margin-left:-100px;
+    left:50%;
+    cursor: pointer;
+    font-size:20px;
+}

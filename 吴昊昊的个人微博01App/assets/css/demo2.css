@@ -1,0 +1,300 @@
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+.center{
+    width:1230px;
+    margin:0 auto;
+}
+body{
+    background: #ccc;
+}
+header{
+    position: relative;
+    width:100%;
+    height:52px;
+    background: #333;
+    z-index:99;
+}
+header nav{
+    width:100%;
+}
+header nav ul li:nth-of-type(7){
+    float:left;
+}
+header nav ul li{
+    float: right;
+    line-height: 32px;
+    width:104px;
+    position: relative;
+}
+header nav ul li a{
+    color:#fff;
+    padding: 10px 20px;
+    display: inline-block;
+}
+header nav ul li:hover{
+    cursor: pointer;
+    left:2px;
+}
+header nav ul li .container{
+    display: block;
+    position: absolute;
+    top:-250px;
+    width:100%;
+    border-radius:0 0 5px 5px;
+    left:0;
+    background: rgba(96,96,96,0.8);
+    text-align:center;
+}
+header nav ul li .container ul li{
+    float:none;
+}
+/*导航*/
+section{
+    margin-top:15px;
+}
+section .center{
+    border:1px solid #fff;
+    border-radius: 10px;
+}
+section .center .sowing{
+    position: relative;
+    width:1230px;
+    height:674px;
+    overflow: hidden;
+}
+section .center .sowing ul{
+    position: absolute;
+    top:0;
+    /* animation:myAnimation 1.5s;
+    animation-fill-mode:forwards; */
+}
+@keyframes myAnimation{
+    0%{}
+    100%{
+        left:0;
+    }
+}
+section .center .sowing ul li{
+    float: left;
+    width:1230px;
+    overflow: hidden;
+    position: relative;
+}
+section .center .sowing ul li img{
+    /* opacity: 0.5; */
+    display: block;
+    border-radius: 10px;
+}
+
+
+ .trans_btn{
+    position: absolute;
+    height: 100%;
+    z-index:95;
+    cursor: pointer;
+    width:10%;
+    transition: all 0.3s ease;
+}
+ .left{
+    right:0;
+}
+ .right{
+    left:0;
+}
+ .trans_btn span{
+    width:100px;
+    display: block;
+    position: absolute;
+    top:50%;
+    margin-top:-44px;
+    cursor:pointer;
+    z-index:44;
+    display: none;
+    opacity: 0;
+    transition: all .3s ease;
+}
+ .trans_btn .left_btn{
+    right:20px;
+}
+ .trans_btn .left_btn:hover{
+    right:18px;  
+    opacity: 1; 
+}
+ .trans_btn .right_btn{
+    left:20px;
+}
+ .trans_btn .right_btn:hover{
+    left:18px;
+    opacity: 1;
+}
+.img_btn{
+    width:100px;
+}
+ .trans_btn:hover span{
+    display: block;
+    opacity: 0.8;
+}
+
+
+
+
+
+.sowing_content{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.sowing_content .sowing_left{
+    width:50%;
+    height:100%;
+    position: absolute;
+    top:0;
+    padding:70px;
+    left:0;    
+}
+.sowing_content .sowing_left .li{
+    margin:20px;
+}
+.sowing_content .sowing_right{
+    width:50%;
+    height:100%;
+    position: absolute;
+    top:0;
+    padding:120px;
+    right:0;    
+    
+}
+.suggest{
+    top:0;
+    padding-top:100px;
+    left:0;
+    height:100%;
+    width:100%;
+    position: absolute;
+    color:#fff;
+    background:rgba(0,0,0,0.2);
+    text-align: center;
+}
+.suggest h1{
+    font-size:36px; 
+    margin-bottom: 30px;
+}
+.suggest h2{
+    font-size:38px; 
+    margin-bottom: 30px;
+}
+.suggest p{
+    font-size: 18px;
+}
+.suggest button{
+    display: block;
+    margin:60px auto;
+    background-color: #7c82ff;
+    border-color: #7c82ff;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 20px;
+    border: none;
+}
+
+
+/* sublime页面 */
+
+.sublime{
+    background:#272822;
+    height: 800px;
+}
+.sublime_header{
+    height: 51px;
+    background:#fff;
+    position: relative;
+}
+.sublime_header_top{
+    position: absolute;
+    top:0;
+    height: 30px;
+    left:0;
+}
+.sublime_header_top span{
+    width:200px;
+    display: inline-block;
+    position: absolute;
+    top:0;
+    font-size: 18px;
+    line-height: 30px;
+    left:45px;
+}
+.sublime_header_file{
+    height: 20px;
+    position: absolute;
+    top:30px;
+    width:100%;
+    left:0;
+}
+.sublime_header_file ul li {
+    float: left;
+    font-size:16px;
+    margin-left:10px;
+    line-height: 20px;
+    text-align: center;
+}
+.sublime_header_file ul li span{
+    cursor: pointer;
+    display: inline-block;
+    width:50px;
+}
+.sublime_header_file ul li span:hover{
+    background:rgba(0,0,0,.1);
+}
+.sublime_center{
+    height: 100%;
+    position: relative;
+}
+#editor{
+    position: absolute;
+    left:0;
+    top:0;
+    
+    right: 0;
+    bottom: 0;
+}
+.Run{
+    display: block;
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 95;
+    margin:60px auto;
+    background-color: #7c82ff;
+    border-color: #7c82ff;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 20px;
+    border: none;
+}
+.sublime_conent{
+    position: absolute;
+    top:40px;
+    right:120px;
+    z-index: 95;
+}
+.sublime_contaiter{
+    width: 500px;
+    height: 600px;
+    background:#fff;
+    border-radius: 3px;
+}

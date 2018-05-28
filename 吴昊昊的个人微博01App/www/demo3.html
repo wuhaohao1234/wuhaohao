@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sublime页面</title>
+    <link rel="shortcut icon" href="../assets/images/favicon2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/demo2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="center">
+                <li>
+                    <a href="#">留言</a>
+                </li>
+                <li>
+                    <a href="#">关于我</a>
+                </li>
+                <li>
+                    <a href="#">鸡汤文</a>
+                </li>
+                <li class="bigLi">
+                    <a href="#">趣知识</a>
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a href="#">生活百科</a>
+                            </li>
+                            <li>
+                                <a href="#">小技巧</a>
+                            </li>
+                            <li>
+                                <a href="#">科技</a>
+                            </li>
+                            <li>
+                                <a href="#">文化</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="bigLi">
+                    <a href="#">每天学</a>
+                    <div class="container">
+                        <ul>
+                            <li>
+                                <a href="#">web前端</a>
+                            </li>
+                            <li>
+                                <a href="#">高等数学</a>
+                            </li>
+                            <li>
+                                <a href="#">office</a>
+                            </li>
+                            <li>
+                                <a href="#">c语言</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">博客首页</a>
+                </li>
+                <li class="li_img">
+                    <a href="#">
+                        <img src="../assets/images/wuhao.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sublime">
+        <div class="sublime_header">
+            <div class="sublime_header_top">
+                <img src="../assets/images/tubiao/sublime.png" alt="">
+                <span>sublime文本编辑器</span>
+            </div>
+            <div class="sublime_header_file">
+                <ul>
+                    <li><span>文件</span></li>
+                    <li><span>编辑</span></li>
+                    <li><span>选择</span></li>
+                    <li><span>查找</span></li>
+                    <li><span>视图</span></li>
+                    <li><span>跳转</span></li>
+                    <li><span>工具</span></li>
+                    <li><span>项目</span></li>
+                    <li><span>首选项</span></li>
+                    <li><span>帮助</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sublime_center">
+            <pre id="editor"></pre>
+            <button class="Run" >Run</button>
+            <div class="sublime_conent">
+                <h2 style="text-align: center;color:darkcyan;" >展示层</h2>
+                <div class="sublime_contaiter">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/components/jqueryWu.js"></script>
+    <script src="src-noconflict/ace.js"></script>
+    <!-- load ace language tools -->
+    <script src="src-noconflict/ext-language_tools.js"></script>
+    <script>
+        ace.require("ace/ext/language_tools");
+        var editor = ace.edit("editor");
+        editor.session.setMode("ace/mode/html");
+        editor.setTheme("ace/theme/ambiance");
+        editor.setOptions({
+            enableBasicAutocompletion: true,
+            enableSnippets: true,
+            enableLiveAutocompletion: true
+        });
+        
+    </script>
+    <script src="src-noconflict/show_own_source.js"></script>
+    <script src="../assets/js/demo3.js"></script>
+</body>
+</html>
